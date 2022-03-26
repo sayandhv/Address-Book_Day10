@@ -26,6 +26,10 @@ public class Main {
 		emailId = scanner.nextLine();
 		contact.setEmailId(emailId);
 		
+		System.out.println("Enter city");
+		city = scanner.nextLine();
+		contact.setCity(city);
+		
 		System.out.println("Enter state");
 		state = scanner.nextLine();
 		contact.setState(state);
@@ -42,12 +46,25 @@ public class Main {
 		zipCode = scanner.nextInt();
 		contact.setZipCode(zipCode);
 		
-		System.out.print("First Name: "+contact.getFirstName());
-		System.out.print("\nLast Name: "+contact.getLastName());
-		System.out.print("\nemail id: "+contact.getEmailId());
-		System.out.print("\nState: " +contact.getState());
-		System.out.print("\nAddress: " +contact.getPhoneNo());
-		System.out.print("\nZip Code: "+contact.getZipCode());
+//		System.out.print("First Name: "+contact.getFirstName());
+//		System.out.print("\nLast Name: "+contact.getLastName());
+//		System.out.print("\nemail id: "+contact.getEmailId());
+//		System.out.print("\nState: " +contact.getState());
+//		System.out.print("\nAddress: " +contact.getPhoneNo());
+//		System.out.print("\nZip Code: "+contact.getZipCode());
+		
+		EditContact editContact = new EditContact();
+		editContact.displayContact(contact);
+		
+		System.out.println("\nDo you want to edit Y/N");
+		char editOption = scanner.next().charAt(0);
+		
+		if(editOption == 'Y') {
+			editContact.editContact(contact);
+			editContact.displayContact(contact);
+		}
+		else {
+			System.out.println("OK");
+		}
 	}
-	
 }
