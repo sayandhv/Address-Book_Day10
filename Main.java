@@ -46,13 +46,6 @@ public class Main {
 		zipCode = scanner.nextInt();
 		contact.setZipCode(zipCode);
 		
-//		System.out.print("First Name: "+contact.getFirstName());
-//		System.out.print("\nLast Name: "+contact.getLastName());
-//		System.out.print("\nemail id: "+contact.getEmailId());
-//		System.out.print("\nState: " +contact.getState());
-//		System.out.print("\nAddress: " +contact.getPhoneNo());
-//		System.out.print("\nZip Code: "+contact.getZipCode());
-		
 		EditContact editContact = new EditContact();
 		editContact.displayContact(contact);
 		
@@ -61,6 +54,16 @@ public class Main {
 		
 		if(editOption == 'Y') {
 			editContact.editContact(contact);
+			editContact.displayContact(contact);
+		}
+		else {
+			System.out.println("OK");
+		}
+		
+		System.out.println("Do you want to delete contact Y/N");
+		char deleteOption = scanner.next().charAt(0);
+		if(deleteOption == 'Y') {
+			editContact.deleteContact(contact);
 			editContact.displayContact(contact);
 		}
 		else {

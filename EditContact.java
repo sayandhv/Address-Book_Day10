@@ -20,6 +20,22 @@ public class EditContact {
 		}
 	}
 	
+	public AddressBook deleteContact(AddressBook contact) {
+		System.out.print("\nEnter the first name of contact to be deleted");
+		Scanner scanner = new Scanner(System.in);
+		String deleteName = scanner.nextLine();
+		if(deleteName.equals(contact.firstName)) {
+			AddressBook deleteOpe = new AddressBook();
+			System.out.println("Contact deleted");
+			return deleteOpe;
+		}
+		else {
+			System.out.println("Contact not found");
+		}
+		
+		return contact;
+	}
+	
 	public void displayContact(AddressBook contact) {
 		System.out.print("First name: " +contact.getFirstName());
 		System.out.println("\nLast Name: " +contact.getLastName());
